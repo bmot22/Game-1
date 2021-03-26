@@ -6,7 +6,7 @@ extends Sprite
 # var b = "text"
 var velocitat := Vector2(100,0)
 var acceleracio : Vector2 = Vector2(3,5)
-var velocitat_max = 300
+export var velocitat_max = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

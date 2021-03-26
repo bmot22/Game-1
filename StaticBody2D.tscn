@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://platformer-art-complete-pack-0/Base pack/Tiles/dirt.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1619.78, 617.206 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2( 1.09653, 1.05363 )
+collision_layer = 2
+collision_mask = 2147483652
+
+[node name="bloque" type="Sprite" parent="."]
+position = Vector2( 70, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.367706, -2.78336 )
+
+[node name="bloque2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( -0.367706, -2.78336 )
+
+[node name="bloque3" type="Sprite" parent="."]
+position = Vector2( -70, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.367706, -2.78336 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.0656111, 0.0577396 )
+shape = SubResource( 1 )

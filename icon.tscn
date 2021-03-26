@@ -1,20 +1,55 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://4aee7244eb2b10f51509c9df77ed6875.png" type="Texture" id=1]
-[ext_resource path="res://Sprite.gd" type="Script" id=2]
-[ext_resource path="res://d9v10c0-90b5c542-8072-40b1-9de5-f232965c3218.png" type="Texture" id=3]
+[ext_resource path="res://platformer-art-complete-pack-0/Base pack/Player/p1_jump.png" type="Texture" id=1]
+[ext_resource path="res://personatge.gd" type="Script" id=2]
+[ext_resource path="res://terra.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cloud_feature_graphic.jpg" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="cloud_feature_graphic" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 168.275, -93.6379 )
+scale = Vector2( 1.01749, 1.21262 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( -13.488, -2.304, 9951.49, 496.304 )
+
+[node name="personatge" type="KinematicBody2D" parent="."]
+position = Vector2( -1.32654, 0.663269 )
+collision_layer = 4
+collision_mask = 2
 script = ExtResource( 2 )
 
-[node name="luigi " type="Sprite" parent="Sprite"]
-position = Vector2( 75.4658, 74.1541 )
-scale = Vector2( 0.296955, 0.274752 )
+[node name="alien" type="Sprite" parent="personatge"]
+scale = Vector2( 1.50255, 1.39083 )
 texture = ExtResource( 1 )
+offset = Vector2( -1.17178, -10.2028 )
 
-[node name="red yoshi " type="Sprite" parent="Sprite"]
-position = Vector2( -53.1899, 93.8752 )
-scale = Vector2( 0.0656111, 0.0577396 )
-texture = ExtResource( 3 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="personatge"]
+position = Vector2( -2.65311, -70.9706 )
+scale = Vector2( 1.50255, 1.39083 )
+polygon = PoolVector2Array( 15.0432, -0.283337, 23.4305, 6.87006, 30.052, 14.9772, 32.7006, 24.0382, 32.7006, 33.576, 28.7277, 42.1601, 24.3133, 49.7904, 23.8719, 54.5593, 29.6105, 48.3597, 34.0249, 50.2673, 30.9348, 56.9438, 24.3133, 60.2821, 19.899, 62.1896, 20.3404, 67.9123, 25.1962, 75.0657, 26.9619, 82.2191, 20.3404, 84.6036, 17.2504, 79.8346, 13.2775, 76.9733, 0.0344505, 80.3116, -7.02849, 76.4964, -10.56, 85.0805, -18.9472, 89.8494, -22.4787, 86.5111, -18.5058, 80.7884, -18.5058, 75.0657, -21.1544, 70.2968, -21.1544, 65.5279, -21.5958, 60.2821, -25.5687, 62.1896, -27.7759, 67.4354, -31.3074, 63.6203, -29.9831, 56.9438, -26.4516, 52.6518, -25.1273, 48.3597, -29.5416, 42.637, -32.6317, 34.5298, -33.5145, 27.3764, -31.7488, 19.7462, -29.5416, 13.0697, -22.9201, 4.96248, -16.74, 0.670448, -8.79423, -4.09848, -0.848408, -2.66781, 6.65597, -2.66781 )
+
+[node name="Camera2D" type="Camera2D" parent="personatge"]
+position = Vector2( -15.9186, -221.535 )
+current = true
+limit_top = -394
+limit_bottom = 205
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="personatge"]
+position = Vector2( 2.6532, 31.1741 )
+polygon = PoolVector2Array( -31.8821, 6.00867, -31.8821, 17.2844, 25.1597, 12.6414, 37.0987, 10.6516, 34.4456, 1.36572 )
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -141.941, 126.023 )
+
+[node name="CollisionPolygon2D2" parent="Node2D/gates" index="1"]
+position = Vector2( 1315.93, -19.8983 )
+[connection signal="body_entered" from="Node2D/gates" to="personatge" method="_on_gates_body_entered"]
+
+[editable path="Node2D"]
