@@ -1,6 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://platformer-art-complete-pack-0/Base pack/Tiles/tiles_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://abstract-platformer-370-assets/Tilesheet/tilesheet_complete.png" type="Texture" id=2]
+[ext_resource path="res://abstract-platformer-370-assets/PNG/Enemies/enemySpikey_1.png" type="Texture" id=3]
+[ext_resource path="res://mort.gd" type="Script" id=4]
+[ext_resource path="res://coin-emoji.png" type="Texture" id=5]
+[ext_resource path="res://moneda recollir.tscn" type="PackedScene" id=6]
+[ext_resource path="res://abstract-platformer-370-assets/PNG/Items/keyRed.png" type="Texture" id=7]
+[ext_resource path="res://moneda1.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
@@ -280,51 +287,264 @@ points = PoolVector2Array( 0, 72, 0, 72, 0, 72, 0, 72, 0, 72, 0, 72 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
+12/name = "tilesheet_complete.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 639, 256, 71, 64 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "tilesheet_complete.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 639, 256, 71, 64 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "enemySpikey_1.png 14"
+14/texture = ExtResource( 3 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( -50, 0, 100, 50 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "enemySpikey_1.png 15"
+15/texture = ExtResource( 3 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 50, 50 )
+15/tile_mode = 1
+15/autotile/bitmask_mode = 0
+15/autotile/bitmask_flags = [  ]
+15/autotile/icon_coordinate = Vector2( 0, 0 )
+15/autotile/tile_size = Vector2( 50, 50 )
+15/autotile/spacing = 0
+15/autotile/occluder_map = [  ]
+15/autotile/navpoly_map = [  ]
+15/autotile/priority_map = [  ]
+15/autotile/z_index_map = [  ]
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "coin-emoji.png 16"
+16/texture = ExtResource( 5 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 256, 256, 256 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "coin-emoji.png 17"
+17/texture = ExtResource( 5 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 70, 0, 70, 65 )
+17/tile_mode = 1
+17/autotile/bitmask_mode = 0
+17/autotile/bitmask_flags = [  ]
+17/autotile/icon_coordinate = Vector2( 0, 0 )
+17/autotile/tile_size = Vector2( 70, 65 )
+17/autotile/spacing = 0
+17/autotile/occluder_map = [  ]
+17/autotile/navpoly_map = [  ]
+17/autotile/priority_map = [  ]
+17/autotile/z_index_map = [  ]
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 12 )
-collision_layer = 2
-collision_mask = 4
+collision_layer = 3
+collision_mask = 3
 format = 1
-tile_data = PoolIntArray( -130910, 11, 0, -65535, 8, 0, -65527, 3, 0, -65516, 3, 0, -65509, 9, 0, -65491, 3, 0, -65480, 9, 0, -65468, 3, 0, -65459, 9, 0, -65439, 9, 0, -65424, 9, 0, -65413, 3, 0, -65395, 3, 0, -65381, 9, 0, -65374, 10, 0, 0, 1, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 0, 0, 12, 0, 0, 17, 1, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 0, 0, 33, 1, 0, 34, 2, 0, 35, 2, 0, 36, 2, 0, 37, 0, 0, 42, 1, 0, 43, 2, 0, 44, 2, 0, 45, 2, 0, 46, 2, 0, 47, 2, 0, 48, 0, 0, 54, 1, 0, 55, 2, 0, 56, 2, 0, 57, 2, 0, 58, 0, 0, 63, 1, 0, 64, 2, 0, 65, 2, 0, 66, 2, 0, 67, 2, 0, 68, 2, 0, 69, 2, 0, 70, 2, 0, 71, 0, 0, 75, 1, 0, 76, 2, 0, 77, 2, 0, 78, 2, 0, 79, 0, 0, 83, 1, 0, 84, 2, 0, 85, 2, 0, 86, 0, 0, 92, 6, 0, 93, 5, 0, 94, 5, 0, 95, 5, 0, 96, 5, 0, 97, 5, 0, 98, 5, 0, 99, 5, 0, 100, 4, 0, 105, 6, 0, 106, 5, 0, 107, 4, 0, 112, 6, 0, 113, 5, 0, 114, 4, 0, 118, 6, 0, 119, 5, 0, 120, 4, 0, 123, 6, 0, 124, 5, 0, 125, 5, 0, 126, 5, 0, 127, 5, 0, 128, 4, 0, 133, 6, 0, 134, 5, 0, 135, 4, 0, 138, 6, 0, 139, 5, 0, 140, 5, 0, 141, 5, 0, 142, 5, 0, 143, 5, 0, 144, 4, 0, 149, 6, 0, 150, 5, 0, 151, 5, 0, 152, 5, 0, 153, 5, 0, 154, 5, 0, 155, 5, 0, 156, 4, 0, 160, 6, 0, 161, 5, 0, 162, 4, 0 )
+tile_data = PoolIntArray( -65535, 8, 0, 0, 1, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 0, 0, 12, 0, 0, 17, 1, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 0, 0, 33, 1, 0, 34, 2, 0, 35, 2, 0, 36, 2, 0, 37, 0, 0, 41, 1, 0, 42, 1, 0, 43, 2, 0, 44, 2, 0, 45, 2, 0, 46, 2, 0, 47, 0, 0, 52, 1, 0, 53, 1, 0, 54, 1, 0, 55, 2, 0, 56, 2, 0, 57, 2, 0, 58, 0, 0, 59, 0, 0, 63, 1, 0, 64, 2, 0, 65, 2, 0, 66, 2, 0, 67, 2, 0, 68, 2, 0, 69, 2, 0, 70, 0, 0, 71, 0, 0, 72, 0, 0, 73, 0, 0, 77, 1, 0, 78, 0, 0, 79, 0, 0, 80, 0, 0, 81, 0, 0, 86, 1, 0, 87, 0, 0, 88, 0, 0, 89, 0, 0, 90, 0, 0, 95, 1, 0, 96, 0, 0, 97, 0, 0, 98, 0, 0, 99, 0, 0, 100, 0, 0, 101, 0, 0, 102, 0, 0, 103, 0, 0, 104, 0, 0, 105, 0, 0, 106, 0, 0, 107, 0, 0, 113, 1, 0, 114, 1, 0, 115, 0, 0, 116, 0, 0, 117, 0, 0, 118, 0, 0, 122, 1, 0, 123, 1, 0, 124, 1, 0, 125, 0, 0, 126, 0, 0, 130, 1, 0, 131, 1, 0, 132, 1, 0, 133, 0, 0, 138, 1, 0, 139, 1, 0, 140, 0, 0 )
 
-[node name="gates" type="Area2D" parent="."]
-collision_layer = 2
+[node name="spike1" type="Sprite" parent="."]
+position = Vector2( 1431.68, -32.169 )
+scale = Vector2( 2.01565, 1.6467 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 612.205, -22.5514 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike6" type="Sprite" parent="spike1"]
+position = Vector2( 2629.88, -1.40979 )
+scale = Vector2( 1, 1.03021 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 1317.26, -24.5412 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike5" type="Sprite" parent="spike1"]
+position = Vector2( 2401.84, -0.604177 )
+scale = Vector2( 1, 1.03021 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 2916.43, -21.8881 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike4" type="Sprite" parent="spike1"]
+position = Vector2( 1751.94, -1.00698 )
+scale = Vector2( 1, 1.03021 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 4389.57, -21.8881 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike3" type="Sprite" parent="spike1"]
+position = Vector2( 1089.2, -1.40977 )
+scale = Vector2( 1, 1.03021 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 7908.25, -21.2248 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike2" type="Sprite" parent="spike1"]
+position = Vector2( 482.41, 0 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 9061.03, -20.5616 )
-polygon = PoolVector2Array( -2.02824, -2.47195, -2.02826, -28.3398, 21.1865, -27.6765, 22.513, -39.6155, 32.4622, -38.9522, 33.1254, 20.7427, 18.5334, 20.0794, 19.1966, 14.11, -23.2531, 13.4467, -23.2531, 20.0794, -35.1921, 20.7427, -35.1921, -40.2787, -25.9062, -38.9522, -25.243, -27.6765, -3.3548, -29.0031 )
+[node name="spike7" type="Sprite" parent="spike1"]
+position = Vector2( 3055.19, 0.402805 )
+scale = Vector2( 0.948592, 0.979857 )
+texture = ExtResource( 3 )
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="gates"]
-position = Vector2( 856.291, 94.1853 )
-polygon = PoolVector2Array( 588.939, -10.8287, -0.050354, -16.7982, 1.27625, 42.2334, 9500.32, 25.2536, 9500.99, -37.0944 )
+[node name="mort" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2147483651
+script = ExtResource( 4 )
 
-[node name="porta final" type="Area2D" parent="."]
-collision_layer = 2
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 1433.34, -2.65314 )
+polygon = PoolVector2Array( 30.6892, 1.33176, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.6588, -2.64789 )
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="porta final"]
-position = Vector2( 10400.4, -35.817 )
-scale = Vector2( 1.0432, 1 )
-polygon = PoolVector2Array( -15.9639, 10.5278, -35.8633, 39.712, -39.8428, -343.662, 95.4658, -342.999, 104.089, 39.0487, -35.8633, 39.0487 )
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 2403.72, -1.98984 )
+polygon = PoolVector2Array( 30.6892, 1.33176, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.6588, -2.64789 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 3627.46, -7.29605 )
+polygon = PoolVector2Array( 29.8923, 5.84216, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.7925, 5.17886 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 4963.96, -6.63275 )
+polygon = PoolVector2Array( 29.8923, 5.84216, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.7925, 5.17886 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 6274.6, -5.96945 )
+polygon = PoolVector2Array( 29.8923, 5.84216, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.7925, 5.17886 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 6734.91, -5.96942 )
+polygon = PoolVector2Array( 29.8923, 5.84216, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.7925, 5.17886 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="mort"]
+position = Vector2( 7590.54, -4.64288 )
+polygon = PoolVector2Array( 29.8923, 5.84216, 30.6892, -11.2705, 29.3627, -25.1993, 18.7502, -34.4852, 8.13782, -40.4547, -2.47461, -58.3632, -13.087, -41.118, -26.3527, -29.8423, -32.3221, -25.8626, -31.7925, 5.17886 )
+
+[node name="monedes 2" type="Sprite" parent="."]
+position = Vector2( 9018.91, -86.226 )
+scale = Vector2( 1.29734, 1.39797 )
+texture = ExtResource( 7 )
+
+[node name="moneda 12" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -6211.03, -19.4525 )
+scale = Vector2( 0.770808, 0.715323 )
+collision_layer = 2147483650
+
+[node name="CollisionShape2D" parent="monedes 2/moneda 12" index="1"]
+position = Vector2( -0.663269, 0 )
+
+[node name="moneda 22" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -5791.8, 29.8907 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 32" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -5454.89, -58.8325 )
+scale = Vector2( 0.770808, 0.715323 )
+collision_layer = 2147483650
+
+[node name="moneda 42" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -4994.23, -36.0587 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 52" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -4473.26, -37.008 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 62" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -4163.95, -53.6135 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 72" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -3590.32, -75.9137 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 82" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -3064.75, 35.1096 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 92" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -2580.58, -68.3219 )
+scale = Vector2( 0.770808, 0.715323 )
+collision_mask = 2147483650
+
+[node name="moneda 102" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -2193.05, 32.7373 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 112" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -1946.11, -74.0159 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda 142" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -1001.81, -25.6207 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="moneda moneda 152" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -614.797, -48.3952 )
+scale = Vector2( 0.770808, 0.715323 )
+collision_layer = 2147483650
+
+[node name="moneda moneda 162" parent="monedes 2" instance=ExtResource( 6 )]
+position = Vector2( -240.546, -37.4822 )
+scale = Vector2( 0.770808, 0.715323 )
+
+[node name="clau area" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="clau area"]
+position = Vector2( 502.101, 103.471 )
+polygon = PoolVector2Array( -18.5257, -19.8934, -23.1687, -32.4957, -24.4952, 72.3021, 8654.48, 55.1897, 8657.13, -427.676, 8526.99, -428.339, 8526.99, -46.9551, -19.9851, -47.3534, -23.5702, -31.8322, -24.2335, 36.4853 )
+
+[node name="monedes 1" type="Sprite" parent="."]
+
+[node name="moneda 11" parent="monedes 1" instance=ExtResource( 8 )]
+position = Vector2( 961.752, -110.104 )
+[connection signal="body_entered" from="mort" to="mort" method="_on_mort_body_entered"]
+
+[editable path="monedes 2/moneda 12"]

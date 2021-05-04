@@ -9,24 +9,28 @@ extends KinematicBody2D
 # Called when the node enters the scene tree for the first time.
 var velocitat := Vector2(100,0)
 var acceleracio : Vector2 = Vector2(3,5)
+var contadormonedas = 0
 export var velocitat_max = 300
-onready var textura_original = $alien.texture
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocitat.x = 350
+	velocitat.x = 380
 	velocitat.y += 950*delta
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("puja2") and is_on_floor():
 			velocitat.y = -430
-			$alien.texture = load("res://platformer-art-complete-pack-0/Base pack/Player/p1_hurt.png")
-
 	elif is_on_floor():
-		$alien.texture = textura_original
+		pass
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 
-func _on_gates_body_entered(body):
+func _on_mort_body_entered(body):
+	queue_free()
+
+func _on_clau_area_body_entered(body):
 	get_tree().reload_current_scene()
+	
+func mor():
+	queue_free()
