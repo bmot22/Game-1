@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://abstract-platformer-370-assets/PNG/Players/Player Blue/playerBlue_walk2.png" type="Texture" id=1]
+[ext_resource path="res://platformer-art-complete-pack-0/Base pack/Player/p1_jump.png" type="Texture" id=1]
 [ext_resource path="res://personatge.gd" type="Script" id=2]
 [ext_resource path="res://terra.tscn" type="PackedScene" id=3]
 [ext_resource path="res://cloud_feature_graphic.jpg" type="Texture" id=4]
-[ext_resource path="res://abstract-platformer-370-assets/PNG/Players/Player Red/playerRed_walk2.png" type="Texture" id=5]
-[ext_resource path="res://personatge1.gd" type="Script" id=6]
-[ext_resource path="res://moneda recollir.tscn" type="PackedScene" id=7]
-[ext_resource path="res://moneda1.tscn" type="PackedScene" id=8]
 
-[node name="jugador" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -17,136 +13,43 @@
 motion_scale = Vector2( 0.5, 1 )
 
 [node name="cloud_feature_graphic" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 171.592, -92.7559 )
+position = Vector2( 168.275, -93.6379 )
 scale = Vector2( 1.01749, 1.21262 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( -13.488, -2.304, 9951.49, 496.304 )
 
-[node name="personatge1" type="KinematicBody2D" parent="."]
+[node name="personatge" type="KinematicBody2D" parent="."]
 position = Vector2( -1.32654, 0.663269 )
-script = ExtResource( 6 )
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
 
-[node name="jugador1" type="Sprite" parent="personatge1"]
-position = Vector2( 9.80401, 14.4163 )
-scale = Vector2( 1.94473, 1.79617 )
+[node name="alien" type="Sprite" parent="personatge"]
+scale = Vector2( 1.50255, 1.39083 )
 texture = ExtResource( 1 )
 offset = Vector2( -1.17178, -10.2028 )
 
-[node name="Camera2D" type="Camera2D" parent="personatge1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="personatge"]
+position = Vector2( -2.65311, -70.9706 )
+scale = Vector2( 1.50255, 1.39083 )
+polygon = PoolVector2Array( 15.0432, -0.283337, 23.4305, 6.87006, 30.052, 14.9772, 32.7006, 24.0382, 32.7006, 33.576, 28.7277, 42.1601, 24.3133, 49.7904, 23.8719, 54.5593, 29.6105, 48.3597, 34.0249, 50.2673, 30.9348, 56.9438, 24.3133, 60.2821, 19.899, 62.1896, 20.3404, 67.9123, 25.1962, 75.0657, 26.9619, 82.2191, 20.3404, 84.6036, 17.2504, 79.8346, 13.2775, 76.9733, 0.0344505, 80.3116, -7.02849, 76.4964, -10.56, 85.0805, -18.9472, 89.8494, -22.4787, 86.5111, -18.5058, 80.7884, -18.5058, 75.0657, -21.1544, 70.2968, -21.1544, 65.5279, -21.5958, 60.2821, -25.5687, 62.1896, -27.7759, 67.4354, -31.3074, 63.6203, -29.9831, 56.9438, -26.4516, 52.6518, -25.1273, 48.3597, -29.5416, 42.637, -32.6317, 34.5298, -33.5145, 27.3764, -31.7488, 19.7462, -29.5416, 13.0697, -22.9201, 4.96248, -16.74, 0.670448, -8.79423, -4.09848, -0.848408, -2.66781, 6.65597, -2.66781 )
+
+[node name="Camera2D" type="Camera2D" parent="personatge"]
 position = Vector2( -15.9186, -221.535 )
 current = true
 limit_top = -394
 limit_bottom = 205
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="personatge1"]
-position = Vector2( 8.93198, 12.8279 )
-scale = Vector2( 1.19183, 1.18252 )
-polygon = PoolVector2Array( -3.34179, -55.462, 7.34258, -50.9745, 17.2494, -35.2696, 26.2643, -20.1249, 32.8319, -10.0291, 32.2754, -1.05466, 27.8233, 3.99346, 17.8059, 3.99346, 12.3513, 4.55475, 8.26552, 4.94803, 11.3716, 15.5338, 12.2407, 24.1859, -1.11571, 25.8686, -18.3678, 25.3076, -16.939, 15.5605, -11.6328, 4.28476, -28.878, 4.28476, -38.292, -2.17608, -36.8373, -10.3073, -15.0287, -49.853 )
-
-[node name="personatge2" type="KinematicBody2D" parent="."]
-position = Vector2( -1.32654, 0.663269 )
-collision_layer = 2
-collision_mask = 2147483650
-script = ExtResource( 2 )
-
-[node name="jugador2" type="Sprite" parent="personatge2"]
-position = Vector2( -75.7587, 25.692 )
-scale = Vector2( 1.94473, 1.79617 )
-texture = ExtResource( 5 )
-offset = Vector2( -1.17178, -10.2028 )
-
-[node name="Camera2D" type="Camera2D" parent="personatge2"]
-position = Vector2( -15.9186, -221.535 )
-current = true
-limit_top = -394
-limit_bottom = 205
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="personatge2"]
-position = Vector2( -75.9674, 25.4302 )
-scale = Vector2( 1.19183, 1.18252 )
-polygon = PoolVector2Array( -3.78764, -48.1701, 29.047, -47.0483, 30.16, -33.0258, 29.047, -20.686, 30.7166, -8.90705, 29.6035, -0.493527, 26.8209, 6.79818, 18.4731, 6.23728, 13.4645, 7.3591, 8.26552, 4.94803, 11.3716, 15.5338, 9.56878, 16.8944, -2.67458, 16.8944, -17.1441, 18.5771, -16.939, 15.5605, -13.805, 5.67639, -21.5963, 7.3591, -32.1701, 6.23728, -33.2832, -17.8815, -32.7267, -48.1701 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="personatge"]
+position = Vector2( 2.6532, 31.1741 )
+polygon = PoolVector2Array( -31.8821, 6.00867, -31.8821, 17.2844, 25.1597, 12.6414, 37.0987, 10.6516, 34.4456, 1.36572 )
 
 [node name="Node2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( -141.059, 125.141 )
+position = Vector2( -141.941, 126.023 )
 
-[node name="moneda 2" parent="Node2D" instance=ExtResource( 8 )]
-position = Vector2( 1504.5, -43.6217 )
+[node name="CollisionPolygon2D2" parent="Node2D/gates" index="1"]
+position = Vector2( 1315.93, -19.8983 )
+[connection signal="body_entered" from="Node2D/gates" to="personatge" method="_on_gates_body_entered"]
 
-[node name="moneda 3" parent="Node2D/moneda 2" instance=ExtResource( 8 )]
-position = Vector2( -0.881226, 1.94034 )
-
-[node name="moneda 2" parent="Node2D/moneda 2/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 1034.63, -94.5383 )
-
-[node name="moneda 3" parent="Node2D/moneda 2/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 1710.16, -98.0658 )
-
-[node name="moneda 2" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 405.668, -19.0491 )
-
-[node name="moneda 3" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 1146.45, -50.9737 )
-
-[node name="moneda 4" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 1829.92, 105.649 )
-
-[node name="moneda 5" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 2458.88, -42.5081 )
-
-[node name="moneda 6" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 2960.85, 100.358 )
-
-[node name="moneda 7" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 3279.04, -51.5031 )
-
-[node name="moneda 8" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 4506.28, 18.6952 )
-
-[node name="moneda 9" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 5009.48, -13.5818 )
-
-[node name="moneda 10" parent="Node2D/moneda 2/moneda 3/moneda 3" instance=ExtResource( 8 )]
-position = Vector2( 5493.11, 2.82111 )
-
-[node name="moneda recollida" parent="." instance=ExtResource( 7 )]
-position = Vector2( 822.309, 10.9665 )
-
-[node name="moneda recollida2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1801.8, -41.0039 )
-
-[node name="moneda recollida4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2396.58, -11.1009 )
-
-[node name="moneda recollida5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3074.32, -14.6826 )
-
-[node name="moneda recollida6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3476.93, -35.5095 )
-
-[node name="moneda recollida" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 741.146, -31.1741 )
-
-[node name="moneda recollida2" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 1424.06, 124.696 )
-
-[node name="moneda recollida3" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 2052.31, -20.1637 )
-
-[node name="moneda recollida4" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 2554.28, 121.38 )
-
-[node name="moneda recollida5" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 2875.7, -29.0515 )
-
-[node name="moneda recollida6" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 4099.05, 39.664 )
-
-[node name="moneda recollida7" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 4603.14, 8.88791 )
-
-[node name="moneda recollida8" parent="moneda recollida6" instance=ExtResource( 7 )]
-position = Vector2( 5087.33, 23.3472 )
-
-[node name="moneda 2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1801.22, -41.593 )
+[editable path="Node2D"]
