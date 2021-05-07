@@ -1,0 +1,200 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://player1.gd" type="Script" id=1]
+[ext_resource path="res://ball_blue_large_alt.png" type="Texture" id=2]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=3]
+[ext_resource path="res://ball_red_large.png" type="Texture" id=4]
+[ext_resource path="res://hole_large_end.png" type="Texture" id=5]
+[ext_resource path="res://backgroung.jpg" type="Texture" id=6]
+[ext_resource path="res://pilota.gd" type="Script" id=7]
+[ext_resource path="res://comptador player 1.gd" type="Script" id=8]
+[ext_resource path="res://comptador player 2.gd" type="Script" id=9]
+[ext_resource path="res://porteria player 2.gd" type="Script" id=10]
+[ext_resource path="res://porteria player 1.gd" type="Script" id=11]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 38.9705
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 43.9882
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="PhysicsMaterial" id=5]
+friction = 2.0
+bounce = 2.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 30.0368
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 21.4913, 76.5308 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 614.15, 15.4247 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 17.9548, 97.9905 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 503.507, 20.4364 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 37.3359, 81.0839 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 34.8161, 75.3217 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 2.64307, 326.868 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 22.5922, 113.416 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 31.8131, 110.978 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player1" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
+position = Vector2( 50.0406, 285.142 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player1"]
+position = Vector2( 56.5305, 283.142 )
+scale = Vector2( 0.65625, 0.59375 )
+frames = SubResource( 2 )
+
+[node name="player2" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
+position = Vector2( 960.828, 291.84 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player2"]
+position = Vector2( 962.397, 292.053 )
+scale = Vector2( 0.688257, 0.612778 )
+frames = SubResource( 4 )
+
+[node name="pilota" type="RigidBody2D" parent="."]
+position = Vector2( -13.4696, 8.97971 )
+collision_mask = 3
+mass = 0.5
+physics_material_override = SubResource( 5 )
+gravity_scale = 0.0
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="pilota"]
+position = Vector2( 467.615, 261.874 )
+scale = Vector2( 0.354585, 0.326523 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pilota"]
+position = Vector2( 460.87, 266.374 )
+shape = SubResource( 6 )
+
+[node name="background" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="background"]
+position = Vector2( 511.882, 290.411 )
+scale = Vector2( 1.60608, 1.60943 )
+texture = ExtResource( 6 )
+
+[node name="límits" type="StaticBody2D" parent="."]
+position = Vector2( 110.826, -141.155 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="límits"]
+position = Vector2( 897.845, 247.934 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="límits"]
+position = Vector2( 453.474, 155.174 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="límits"]
+position = Vector2( 901.898, 649.937 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="límits"]
+position = Vector2( 380.496, 730.754 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="límits"]
+position = Vector2( -129.932, 630.785 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="límits"]
+position = Vector2( -124.95, 244.346 )
+shape = SubResource( 12 )
+
+[node name="meitat" type="StaticBody2D" parent="."]
+collision_layer = 2147483652
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meitat"]
+position = Vector2( 505.221, 283.437 )
+shape = SubResource( 13 )
+
+[node name="porteria player 1" type="Area2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porteria player 1"]
+position = Vector2( -17.8704, 297.773 )
+shape = SubResource( 14 )
+
+[node name="porteria player 2" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porteria player 2"]
+position = Vector2( 1045.33, 293.33 )
+shape = SubResource( 15 )
+
+[node name="comptador player 1" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="puntuacio1" type="Label" parent="comptador player 1"]
+margin_left = 363.33
+margin_top = 71.0271
+margin_right = 412.33
+margin_bottom = 95.0271
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="comptador player 2" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="puntuacio2" type="Label" parent="comptador player 2"]
+margin_left = 602.661
+margin_top = 68.6697
+margin_right = 649.661
+margin_bottom = 88.6697
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="porteria player 1" to="pilota" method="_on_porteria_player_1_body_entered"]
+[connection signal="body_entered" from="porteria player 2" to="pilota" method="_on_porteria_player_2_body_entered"]
